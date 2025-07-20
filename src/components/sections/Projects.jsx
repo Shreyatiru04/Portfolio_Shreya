@@ -6,10 +6,10 @@ import ProjectCard from "../cards/ProjectCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  justify-content: center;
   margin-top: 50px;
   padding: 0px 16px;
-  position: rlative;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -27,6 +27,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const Title = styled.div`
   font-size: 52px;
   text-align: center;
@@ -38,6 +39,7 @@ const Title = styled.div`
     font-size: 32px;
   }
 `;
+
 const Desc = styled.div`
   font-size: 18px;
   text-align: center;
@@ -50,36 +52,43 @@ const Desc = styled.div`
 
 const ToggleButtonGroup = styled.div`
   display: flex;
-  border: 1.5px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
+  border: 1.5px solid #ADD8E6;
+  color: #ADD8E6;
   font-size: 16px;
   border-radius: 12px;
-font-weight 500;
-margin: 22px 0;
-@media (max-width: 768px){
+  font-weight: 500;
+  margin: 22px 0;
+
+  @media (max-width: 768px) {
     font-size: 12px;
-}
+  }
 `;
+
 const ToggleButton = styled.div`
   padding: 8px 18px;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
   &:hover {
-    background: ${({ theme }) => theme.primary + 20};
+    background: rgba(173, 216, 230, 0.2);
   }
+
   @media (max-width: 768px) {
     padding: 6px 8px;
     border-radius: 4px;
   }
-  ${({ active, theme }) =>
+
+  ${({ active }) =>
     active &&
     `
-  background:  ${theme.primary + 20};
+    background: rgba(173, 216, 230, 0.2);
   `}
 `;
+
 const Divider = styled.div`
   width: 1.5px;
-  background: ${({ theme }) => theme.primary};
+  background: #ADD8E6;
 `;
 
 const CardContainer = styled.div`
@@ -92,15 +101,12 @@ const CardContainer = styled.div`
 
 const Projects = () => {
   const [toggle, setToggle] = useState("all");
+
   return (
     <Container id="Projects">
       <Wrapper>
         <Title>Projects</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+        <Desc style={{ marginBottom: "40px" }}>
           I have worked on a wide range of projects. From web apps to android
           apps. Here are some of my projects.
         </Desc>
@@ -117,7 +123,7 @@ const Projects = () => {
             active={toggle === "web app"}
             onClick={() => setToggle("web app")}
           >
-            WEB APP"S
+            WEB APP'S
           </ToggleButton>
           <Divider />
           <ToggleButton
@@ -138,10 +144,11 @@ const Projects = () => {
         <CardContainer>
           {toggle === "all" &&
             projects.map((project) => <ProjectCard project={project} />)}
+
           {projects
             .filter((item) => item.category === toggle)
             .map((project) => (
-              <ProjectCard project={project} />
+              <ProjectCard key={project.id} project={project} />
             ))}
         </CardContainer>
       </Wrapper>

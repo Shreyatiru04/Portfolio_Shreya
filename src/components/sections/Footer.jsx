@@ -16,6 +16,7 @@ const FooterContainer = styled.div`
   z-index: 10;
   position: relative;
 `;
+
 const FooterWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
@@ -26,11 +27,13 @@ const FooterWrapper = styled.div`
   padding: 1rem;
   color: ${({ theme }) => theme.text_primary};
 `;
+
 const Logo = styled.div`
   font-weight: 600;
   font-size: 20px;
-  color: ${({ theme }) => theme.primary};
+  color: lightblue;
 `;
+
 const Nav = styled.ul`
   width: 100%;
   max-width: 800px;
@@ -39,6 +42,7 @@ const Nav = styled.ul`
   flex-direction: row;
   gap: 2rem;
   justify-content: center;
+
   @media (max-width: 768px) {
     flex-wrap: wrap;
     gap: 1rem;
@@ -47,32 +51,39 @@ const Nav = styled.ul`
     font-size: 12px;
   }
 `;
+
 const NavLink = styled.a`
   color: ${({ theme }) => theme.text_primary};
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease-in-out;
+
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
+
   @media (max-width: 768px) {
     font-size: 1rem;
   }
 `;
+
 const SocialMediaIcons = styled.div`
   display: flex;
   margin-top: 1rem;
 `;
+
 const SocialMediaIcon = styled.a`
   display: inline-block;
   margin: 0 1rem;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.text_primary};
   transition: color 0.2s ease-in-out;
+
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
 `;
+
 const Copyright = styled.p`
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -84,11 +95,10 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Rishav Chanda</Logo>
+        <Logo>Tirunagari Shreya</Logo>
         <Nav>
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
           <NavLink href="#Projects">Projects</NavLink>
           <NavLink href="#Education">Education</NavLink>
         </Nav>
@@ -106,7 +116,9 @@ const Footer = () => {
             <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Rishav Chanda. All rights reserved.</Copyright>
+        <Copyright>
+          &copy; 2025 Tirunagari Shreya. All rights reserved.
+        </Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

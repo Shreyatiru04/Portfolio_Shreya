@@ -9,8 +9,9 @@ const Top = styled.div`
   gap: 12px;
 `;
 const Image = styled.img`
-  height: 50px;
-  border-radius: 10px;
+  height: 80px;
+  width:70px;
+  border-radius: 20%;
   margin-top: 4px;
   @media only screen and (max-width: 768px) {
     height: 40px;

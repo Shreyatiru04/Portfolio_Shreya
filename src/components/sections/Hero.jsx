@@ -19,6 +19,7 @@ const HeroContainer = styled.div`
   position: relative;
   padding: 80px 30px;
   z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 
   @media (max-width: 960px) {
     padding: 66px 16px;
@@ -27,9 +28,8 @@ const HeroContainer = styled.div`
   @media (max-width: 640px) {
     padding: 32px 16px;
   }
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+
 const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
@@ -42,6 +42,7 @@ const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
+
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
@@ -54,6 +55,7 @@ const HeroLeftContainer = styled.div`
     align-items: center;
   }
 `;
+
 const HeroRightContainer = styled.div`
   width: 100%;
   order: 2;
@@ -64,7 +66,7 @@ const HeroRightContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-contents: center;
+    justify-content: center;
     margin-bottom: 80px;
   }
 
@@ -81,9 +83,6 @@ const Title = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
-  }
-
-  @media (max-width: 960px) {
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 8px;
@@ -100,9 +99,6 @@ const TextLoop = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
-  }
-
-  @media (max-width: 960px) {
     font-size: 22px;
     line-height: 48px;
     margin-bottom: 16px;
@@ -111,7 +107,15 @@ const TextLoop = styled.div`
 
 const Span = styled.div`
   cursor: pointer;
-  color: ${({ theme }) => theme.primary};
+  color: #add8e6;
+
+  &:hover {
+    color: #ffffff;
+    background: #add8e6;
+    padding: 0 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -122,17 +126,12 @@ const SubTitle = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
-  }
-
-  @media (max-width: 960px) {
     font-size: 16px;
     line-height: 32px;
   }
 `;
 
 const ResumeButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
   appearance: button;
   text-decoration: none;
 
@@ -141,49 +140,34 @@ const ResumeButton = styled.a`
   text-align: center;
   padding: 16px 0;
 
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
+  background: linear-gradient(225deg, #b0e0ff 0%, #add8e6 100%);
   box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
   border-radius: 50px;
   font-weight: 600;
   font-size: 20px;
+  color: black; /* Changed from white to black */
 
-     &:hover {
-        transform: scale(1.05);
+  &:hover {
+    transform: scale(1.05);
     transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-    color: white;
+    box-shadow: 20px 20px 60px #1f2634;
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `;
 
 const Img = styled.img`
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 700px;
+  height: 700px;
   max-width: 400px;
   max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
+  border: 2px solid #add8e6;
+  background-color: #add8e6;
 
   @media (max-width: 640px) {
     max-width: 280px;
@@ -206,8 +190,7 @@ const HeroBg = styled.div`
   padding: 0 30px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
 
   @media (max-width: 960px) {
     justify-content: center;
@@ -253,10 +236,11 @@ const Hero = () => {
                 Check Resume
               </ResumeButton>
             </HeroLeftContainer>
+
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
                 <Tilt>
-                  <Img src={HeroImg} alt="Rishav Chanda" />
+                  <Img src={HeroImg} alt="Tirunagari Shreya" />
                 </Tilt>
               </motion.div>
             </HeroRightContainer>
