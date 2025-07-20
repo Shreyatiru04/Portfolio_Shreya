@@ -8,7 +8,7 @@ export const Bio = {
     "I'm a tech enthusiast with a strong interest in full-stack development, AI, and real-world problem solving. I enjoy building projects using React and machine learning, and I’m always exploring new technologies through hands-on learning. I’m focused on turning ideas into impactful, user-friendly applications.",
   github: "https://github.com/Shreyatiru04",
   resume:
-    "https://drive.google.com/file/d/1kJ4OKTrRuRhySdPE9VMio1zDcqzDJw3T/view?usp=drive_link",
+    "https://drive.google.com/file/d/1y-hCbQEfscTXOu9R4XglRFABGGs41tma/view?usp=drive_link",
   linkedin: "https://lnk.ink/Linkedin_Shreya",
   insta: "https://www.instagram.com/shreya_aaa10/",
 };
