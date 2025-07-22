@@ -256,17 +256,5 @@ export const projects = [
     category: "machine learning",
     github: "https://github.com/Shreyatiru04/NeuroTumorDetector",
   },
-  {
-    id: 3,
-    title: "MagicStoryBot",
-    date: "July 2025 - Apr 2026",
-    description:
-      "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
-    image:
-      "https://i.postimg.cc/zGwwy5Xm/Whats-App-Image-2025-07-20-at-18-31-41.jpg",
-    tags: ["React.js","Tailwind CSS","Framer Motion","Lottie + lottie-react","Node.js + Express.js","OpenAI","TTS"],
-    category: "web app",
-    github: "https://github.com/Shreyatiru/MagicstoryBot",
-  },
 ];
 
